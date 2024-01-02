@@ -1,1 +1,12 @@
-<p>question-block works!</p>
+<div>
+	<header>
+		{{ question.question }}
+	</header>
+	<section class="question-block__answers">
+		<ng-container
+			*ngFor="let choice of question.choices"
+		>
+			<span>{{ choice }}</span>
+		</ng-container>
+	</section>
+</div>
