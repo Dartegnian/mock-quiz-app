@@ -13,6 +13,7 @@ import { QuizQuestionsService } from '@services/quiz-questions.service';
 })
 export class QuizPageComponent implements OnInit {
 	quizQuestions: Array<IQuizQuestion> = [];
+	totalScore = 0;
 
 	constructor(
 		private quizQuestionsService: QuizQuestionsService
@@ -23,5 +24,8 @@ export class QuizPageComponent implements OnInit {
 		this.quizQuestions = this.quizQuestionsService.fetchQuizQuestions();
 		console.warn(this.quizQuestions);
 	}
-
+	
+	updatePoints(points: number): void {
+		this.totalScore = this.totalScore + points;
+	}
 }
