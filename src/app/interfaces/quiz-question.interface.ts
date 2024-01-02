@@ -3,5 +3,5 @@ export default interface IQuizQuestion {
 	question: string;
 	answer: string | number | Array<string>;
 	pointGrade: number;
-	choices: Array<string> | Array<number>;
+	choices: Array<string>;
 }

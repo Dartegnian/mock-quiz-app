@@ -1,1 +1,8 @@
 <p>quiz-page works!</p>
+<ng-container
+	*ngFor="let quizQuestion of quizQuestions"
+>
+	<app-question-block
+		[question]="quizQuestion"
+	></app-question-block>
+</ng-container>
