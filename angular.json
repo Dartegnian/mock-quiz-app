@@ -30,6 +30,8 @@
               "src/assets"
             ],
             "styles": [
+			  "node_modules/bootstrap/dist/css/bootstrap-reboot.min.css",
+			  "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -95,6 +97,8 @@
               "src/assets"
             ],
             "styles": [
+			  "node_modules/bootstrap/dist/css/bootstrap-reboot.min.css",
+			  "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
               "src/styles.scss"
             ],
             "scripts": []
