@@ -17,7 +17,8 @@ export class QuestionBlockComponent implements OnInit {
 		pointGrade: 0,
 		choices: [
 			""
-		]
+		],
+		isCorrect: false
 	};
 	@Output() updatePointsEvent = new EventEmitter<number>;
 

@@ -23,19 +23,21 @@ export class QuizQuestionsService {
 					"speaking",
 					"telling",
 					"talking"
-				]
+				],
+				isCorrect: false
 			},
 			{
 				type: "multiple-choice",
 				question: "She hasn't come home ........",
-				answer: "saying",
+				answer: "yet",
 				pointGrade: 1,
 				choices: [
 					"still",
 					"already",
 					"yet",
 					"till"
-				]
+				],
+				isCorrect: false
 			}
 		];
 	}

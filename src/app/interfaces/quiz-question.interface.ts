@@ -4,4 +4,5 @@ export default interface IQuizQuestion {
 	answer: string | number | Array<string>;
 	pointGrade: number;
 	choices: Array<string>;
+	isCorrect: boolean;
 }
