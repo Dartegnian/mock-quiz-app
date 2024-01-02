@@ -4,9 +4,9 @@
 	</header>
 	<section class="question-block__answers">
 		<ng-container
-			*ngFor="let choice of question.choices"
+			*ngFor="let choice of shuffledChoices"
 		>
-			<span>{{ choice }}</span>
+			<span (click)="evaluateChoiceSelect(choice)">{{ choice }}</span>
 		</ng-container>
 	</section>
 </div>
