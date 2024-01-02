@@ -25,7 +25,29 @@ export class QuizPageComponent implements OnInit {
 		console.warn(this.quizQuestions);
 	}
 	
-	updatePoints(points: number): void {
-		this.totalScore = this.totalScore + points;
+	updatePoints(pointsInfo: { isCorrect: boolean; index: number }): void {
+		const { isCorrect, index } = pointsInfo;
+		if (isCorrect) {
+			this.quizQuestions[index].isCorrect = true;
+		} else {
+			this.quizQuestions[index].isCorrect = false;
+		}
+
+		this.tallyScore();
+	}
+
+	tallyScore(): void {
+		let computedScore = 0;
+
+		this.quizQuestions.forEach(
+			(question) => {
+				if (question.isCorrect === true) {
+					computedScore += question.pointGrade;
+					console.warn("CORRECT", question);
+				}
+			}
+		);
+
+		this.totalScore = computedScore;
 	}
 }

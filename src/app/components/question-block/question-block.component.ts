@@ -20,7 +20,8 @@ export class QuestionBlockComponent implements OnInit {
 		],
 		isCorrect: false
 	};
-	@Output() updatePointsEvent = new EventEmitter<number>;
+	@Input() index = 0;
+	@Output() updatePointsEvent = new EventEmitter<{ isCorrect: boolean; index: number }>;
 
 	shuffledChoices: Array<string> = [];
 
@@ -50,9 +51,15 @@ export class QuestionBlockComponent implements OnInit {
 		switch (this.question.type) {
 			case "multiple-choice":
 				if (choice.toLowerCase() === this.question.answer.toString().toLocaleLowerCase()) {
-					this.updatePointsEvent.emit(this.question.pointGrade)
+					this.updatePointsEvent.emit({
+						isCorrect: true,
+						index: this.index
+					})
 				} else {
-					this.updatePointsEvent.emit(0)
+					this.updatePointsEvent.emit({
+						isCorrect: false,
+						index: this.index
+					})
 				}
 				break;
 
