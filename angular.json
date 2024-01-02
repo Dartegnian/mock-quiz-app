@@ -34,6 +34,11 @@
 			  "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
               "src/styles.scss"
             ],
+			"stylePreprocessorOptions": {
+				"includePaths": [
+					"src/assets/scss"
+				]
+			},
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -101,6 +106,11 @@
 			  "node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
               "src/styles.scss"
             ],
+			"stylePreprocessorOptions": {
+				"includePaths": [
+					"src/assets/scss"
+				]
+			},
             "scripts": []
           }
         }
