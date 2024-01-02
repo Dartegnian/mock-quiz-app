@@ -24,6 +24,18 @@ export class QuizQuestionsService {
 					"telling",
 					"talking"
 				]
+			},
+			{
+				type: "multiple-choice",
+				question: "She hasn't come home ........",
+				answer: "saying",
+				pointGrade: 1,
+				choices: [
+					"still",
+					"already",
+					"yet",
+					"till"
+				]
 			}
 		];
 	}
