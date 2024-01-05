@@ -1,0 +1,7 @@
+<nav class="navbar">
+	<h1 class="navbar__site-name">Mock Exam</h1>
+	<ul class="navbar__list">
+		<li *ngFor="let link of links" class="navbar__list-item"><a [href]="link.link" class="navbar__link">{{ link.title }}</a></li>
+	</ul>
+	<button class="navbar__login">Log In</button>
+</nav>
