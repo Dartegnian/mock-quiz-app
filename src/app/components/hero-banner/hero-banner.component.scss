@@ -3,12 +3,40 @@
 	justify-content: center;
 	align-items: center;
 	margin: 2rem 5rem;
+	margin-top: 4rem;
 }
 
 .hero-banner {
 	display: flex;
 	flex-direction: column;
-    width: 100%;
+	width: 100%;
+
+	&__header {
+		display: flex;
+		flex-direction: row;
+		gap: 4rem;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+	}
+
+	&__tagline {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__tagline-text {
+		font-size: 3rem;
+
+		&--highlighted {
+			font-weight: 900;
+			position: relative;
+			display: inline-block;
+			max-width: max-content;
+			background-color: #6CD982;
+			padding: 0rem 1rem;
+			text-align: center;
+		}
+	}
 
 	&__illustrations {
 		display: flex;
@@ -16,6 +44,23 @@
 	}
 
 	&__illustration {
-		max-width: 30%;
+		max-width: 25%;
+	}
+
+	&__cta {
+		display: flex;
+		flex-direction: column;
+		max-width: 45%;
+		font-size: 1.25rem;
+	}
+
+	&__cta-button {
+		background-color: #6CD982;
+		border: none;
+		font-weight: 700;
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+		width: max-content;
+		margin-top: 1rem;
 	}
 }

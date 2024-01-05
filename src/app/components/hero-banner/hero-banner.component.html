@@ -1,10 +1,18 @@
 <article class="hero-banner">
 	<header class="hero-banner__header">
-		<section class="hero-banner__tagline"></section>
-		<section class="hero-banner__cta"></section>
+		<section class="hero-banner__tagline">
+			<span class="hero-banner__tagline-text">{{ taglineText }}</span>
+			<span class="hero-banner__tagline-text hero-banner__tagline-text--highlighted">{{ highlightedText }}</span>
+
+		</section>
+		<section class="hero-banner__cta">
+			<span>{{ ctaText }}</span>
+			<button class="hero-banner__cta-button">Get Started</button>
+		</section>
 	</header>
 	<section class="hero-banner__illustrations">
 		<img src="/assets/img/Learning-amico.png" class="hero-banner__illustration" />
+		<img src="/assets/img/Webinar-amico.png" class="hero-banner__illustration" />
 		<img src="/assets/img/Learning-bro.png"  class="hero-banner__illustration" />
 	</section>
 </article>
