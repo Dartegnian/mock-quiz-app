@@ -1,0 +1,21 @@
+:host {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem 5rem;
+}
+
+.hero-banner {
+	display: flex;
+	flex-direction: column;
+    width: 100%;
+
+	&__illustrations {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__illustration {
+		max-width: 30%;
+	}
+}
