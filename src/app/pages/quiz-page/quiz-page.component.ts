@@ -50,6 +50,7 @@ export class QuizPageComponent implements OnInit {
 		);
 
 		this.totalScore = computedScore;
+		this.quizQuestionsService.setTotalScore(computedScore);
 	}
 
 	submitScores(): void {

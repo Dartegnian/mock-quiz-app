@@ -7,6 +7,7 @@ import IQuizQuestion from '@interfaces/quiz-question.interface';
 export class QuizQuestionsService {
 	quizQuestions: Array<IQuizQuestion>;
 	currentResults: Array<IQuizQuestion>;
+	totalScore = 0;
 
 	constructor() {
 		this.quizQuestions = this.fetchQuizQuestions();
@@ -65,5 +66,13 @@ export class QuizQuestionsService {
 
 	setCurrentResults(results: Array<IQuizQuestion>): void {
 		this.currentResults = results;
+	}
+
+	setTotalScore(score: number): void {
+		this.totalScore = score;
+	}
+
+	getTotalScore(): number {
+		return this.totalScore;
 	}
 }
