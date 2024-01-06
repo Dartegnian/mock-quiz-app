@@ -1,6 +1,12 @@
 .question-block {
+	background-color: #FFFFFF;
+	border: 3px solid #BBBBBB;
+	box-shadow: 4px 4px 0 0px #BBBBBB;
+	padding: 1rem;
+
 	&__answers {
 		display: flex;
 		gap: 2rem;
+		cursor: pointer;
 	}
 }

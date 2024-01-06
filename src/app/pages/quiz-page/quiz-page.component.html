@@ -1,11 +1,10 @@
-<p>quiz-page works!</p>
-<h1>{{ totalScore }}</h1>
-<ng-container
-	*ngFor="let quizQuestion of quizQuestions; let i = index"
->
-	<app-question-block
-		[question]="quizQuestion"
-		[index]="i"
-		(updatePointsEvent)="updatePoints($event)"
-	></app-question-block>
-</ng-container>
+<div class="quiz-page">
+	<h1>Score: {{ totalScore }}</h1>
+
+	<article class="quiz-area">
+		<ng-container *ngFor="let quizQuestion of quizQuestions; let i = index">
+			<app-question-block [question]="quizQuestion" [index]="i"
+				(updatePointsEvent)="updatePoints($event)"></app-question-block>
+		</ng-container>
+	</article>
+</div>

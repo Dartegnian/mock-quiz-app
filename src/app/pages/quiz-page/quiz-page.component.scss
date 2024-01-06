@@ -1,0 +1,24 @@
+:host {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem 5rem;
+	margin-top: 4rem;
+}
+
+.quiz-page {
+	display: flex;
+	gap: 5rem;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.quiz-area {
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient(110deg, #6CD982 0%, #8fd3f4 100%);
+	padding: 2rem;
+	gap: 2rem;
+	border-radius: 16px;
+	flex-grow: 1;
+}
