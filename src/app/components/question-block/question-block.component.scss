@@ -15,4 +15,24 @@
 		cursor: pointer;
 		text-transform: capitalize;
 	}
+
+	&__label {
+		input[type="radio"] {
+			appearance: none;
+			-moz-appearance: none;
+
+			width: 16px;
+			height: 16px;
+
+			border: 2px solid #6CD982;
+			border-radius: 50%;
+			background-color: #EEEEEE;
+
+			margin: 4px 8px 0 0;
+
+			&:checked {
+				background-color: #6CD982;
+			}
+		}
+	}
 }
