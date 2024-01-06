@@ -12,6 +12,8 @@ export class CourseRecommendationComponent implements OnInit {
 	@Input() ranking: "low" | "average" | "high" = "low";
 	recommendations = {
 		b2First: {
+			productName: "B2 First",
+			productPrice: "€23",
 			image: "/assets/img/courses/B2_First_-_MockUp.webp",
 			inclusionHeader: "Test&Train Self-Study B2 First gives you",
 			inclusions: [

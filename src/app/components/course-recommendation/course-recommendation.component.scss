@@ -1,6 +1,50 @@
+.course-reccomendation {
+	&__product {
+		display: flex;
+		width: 700px;
+	}
+}
+
 .standalone-recommendation {
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 700px;
+
+	&__content {
+		display: flex;
+		flex-direction: row;
+	}
+
 	&__image {
+		width: 100%;
 		max-width: 300px;
+		height: max-content;
+	}
+
+	&__header {
+		font-size: 3.5rem;
+		font-weight: 700;
+		text-align: center;
+
+		&--b-series {
+			color: #182062;
+		}
+	}
+
+	&__cta {
+		border-radius: 3px;
+		padding: 0.5rem 4rem;
+		text-align: center;
+		width: 60%;
+		max-width: 330px;
+		text-decoration: none;
+		align-self: center;
+		margin: 1rem 0rem;
+
+		&--b-series {
+			color: #182062;
+			background-color: #ccd544;
+		}
 	}
 }
