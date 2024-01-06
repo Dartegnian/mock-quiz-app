@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LoginModalService } from '@services/login-modal.service';
 
 @Component({
 	selector: 'app-nav-bar',
@@ -13,4 +14,12 @@ export class NavBarComponent {
 		{ link: "/", title: "Home" },
 		{ link: "https://dartegnian.com", title: "Dartegnian.com" }
 	];
+
+	constructor(
+		private loginModalService: LoginModalService
+	) {}
+
+	showModal() {
+		this.loginModalService.setLoginModalShow(true);
+	}
 }
