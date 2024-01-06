@@ -12,7 +12,7 @@ export class QuizQuestionsService {
 	}
 
 	fetchQuizQuestions(): Array<IQuizQuestion> {
-		return [
+		let quizQuestions: Array<IQuizQuestion> = [
 			{
 				type: "multiple-choice",
 				question: "Can you hear what he is .......?",
@@ -40,5 +40,24 @@ export class QuizQuestionsService {
 				isCorrect: false
 			}
 		];
+
+		quizQuestions = this.shuffleQuizQuestions(quizQuestions);
+
+		return quizQuestions;
+	}
+
+	shuffleQuizQuestions(questions: Array<IQuizQuestion>): Array<IQuizQuestion> {
+		let arrayLength = questions.length;
+
+		while (arrayLength) {
+			let randomIndex = Math.floor(Math.random() * arrayLength--);
+
+			let temporaryElement = questions[arrayLength];
+			questions[arrayLength] = questions[randomIndex];
+			questions[randomIndex] = temporaryElement;
+		}
+
+		return questions;
+		
 	}
 }
