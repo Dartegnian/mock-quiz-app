@@ -47,4 +47,26 @@
 			background-color: #ccd544;
 		}
 	}
+
+	&__product-heading {
+		font-size: 1.5rem;
+	}
+
+	&__list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__list-text {
+	}
+
+	&__list-span {
+
+	}
+
+	&__checkmark {
+		max-width: 20px;
+		color: red;
+	}
 }

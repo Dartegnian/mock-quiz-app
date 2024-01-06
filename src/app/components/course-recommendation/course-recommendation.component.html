@@ -1,41 +1,64 @@
 <article class="course-recommendation">
-
-	
-	<section class="course-reccomendation__product">
-		<ng-container [ngTemplateOutlet]="b2First"></ng-container>
-	</section>
+  <section class="course-recomendation__product">
+    <ng-container [ngTemplateOutlet]="b2First"></ng-container>
+  </section>
 </article>
 
 <ng-template #b2First>
-	<article class="standalone-recommendation">
-		<header
-			class="standalone-recommendation__header standalone-recommendation__header--b-series"
-		>{{ recommendations['b2First'].productName }}</header>
-		<a href="https://testandtrain.com/" target="_blank" class="standalone-recommendation__cta standalone-recommendation__cta--b-series">
-			Buy now for {{ recommendations['b2First'].productPrice }}
-		</a>
-		<section class="standalone-recommendation__content">
-				<img [src]="recommendations['b2First'].image" class="standalone-recommendation__image"/>
-			<section>
-				<h3>{{  recommendations['b2First'].inclusionHeader }}</h3>
-				<ul>
-					<li
-						*ngFor="let inclusion of recommendations['b2First'].inclusions"
-						class="standalone-recommendation__benefit"
-					>
-						<span></span>{{ inclusion }}
-					</li>
-				</ul>
-				<h3>{{  recommendations['b2First'].benefitsHeader }}</h3>
-				<ul>
-					<li
-						*ngFor="let benefit of recommendations['b2First'].benefits"
-						class="standalone-recommendation__benefit"
-					>
-						<span></span>{{ benefit }}
-					</li>
-				</ul>
-			</section>
-		</section>
-	</article>
+  <article class="standalone-recommendation">
+    <header
+      class="standalone-recommendation__header standalone-recommendation__header--b-series"
+    >
+      {{ recommendations["b2First"].productName }}
+    </header>
+    <a
+      href="https://testandtrain.com/"
+      target="_blank"
+      class="standalone-recommendation__cta standalone-recommendation__cta--b-series"
+    >
+      Buy now for {{ recommendations["b2First"].productPrice }}
+    </a>
+    <section class="standalone-recommendation__content">
+      <img
+        [src]="recommendations['b2First'].image"
+        class="standalone-recommendation__image"
+      />
+      <section>
+        <h3 class="standalone-recommendation__product-heading">
+          {{ recommendations["b2First"].inclusionHeader }}
+        </h3>
+        <ul class="standalone-recommendation__list">
+          <li
+            *ngFor="let inclusion of recommendations['b2First'].inclusions"
+            class="standalone-recommendation__list-text"
+          >
+            <span class="standalone-recommendation__list-span">
+              <img
+                src="/assets/svg/eo_circle_green_checkmark.svg"
+                class="standalone-recommendation__checkmark"
+              />
+            </span>
+            {{ inclusion }}
+          </li>
+        </ul>
+        <h3 class="standalone-recommendation__product-heading">
+          {{ recommendations["b2First"].benefitsHeader }}
+        </h3>
+        <ul class="standalone-recommendation__list">
+          <li
+            *ngFor="let benefit of recommendations['b2First'].benefits"
+            class="standalone-recommendation__list-text"
+          >
+            <span class="standalone-recommendation__list-span">
+              <img
+                src="/assets/svg/eo_circle_green_checkmark.svg"
+                class="standalone-recommendation__checkmark"
+              />
+            </span>
+            {{ benefit }}
+          </li>
+        </ul>
+      </section>
+    </section>
+  </article>
 </ng-template>
