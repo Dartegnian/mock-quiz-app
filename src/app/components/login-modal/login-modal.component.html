@@ -4,7 +4,7 @@
 		<button class="login-modal__close" (click)="closeModal()">X</button>
 	</header>
 	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-modal__form">
-		<label for="email">Username</label>
+		<label for="email">Email</label>
 		<input type="text" id="email" formControlName="email" />
 
 		<label for="password">Password</label>
@@ -12,4 +12,13 @@
 
 		<button type="submit" [disabled]="loginForm.invalid">Login</button>
 	</form>
+
+	<span
+		class="login-modal__text"
+		*ngIf="isSuccessfulLogin !== undefined"
+		[class.login-modal__text--success]="isSuccessfulLogin"
+		[class.login-modal__text--failed]="!isSuccessfulLogin"
+	>
+		{{ isSuccessfulLogin ? 'Successfully logged in': 'Login failed' }}
+	</span>
 </article>

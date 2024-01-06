@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '@services/auth.service';
@@ -6,12 +7,13 @@ import { LoginModalService } from '@services/login-modal.service';
 @Component({
 	selector: 'app-login-modal',
 	standalone: true,
-	imports: [ReactiveFormsModule],
+	imports: [ReactiveFormsModule, CommonModule],
 	templateUrl: './login-modal.component.html',
 	styleUrl: './login-modal.component.scss'
 })
 export class LoginModalComponent {
 	loginForm: FormGroup;
+	isSuccessfulLogin: boolean | undefined;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -26,7 +28,13 @@ export class LoginModalComponent {
 
 	onSubmit() {
 		if (this.loginForm.valid) {
-			this.authService.login(this.loginForm.value);
+			this.authService.login(this.loginForm.value).subscribe(
+				(isSuccessful) => {
+					this.isSuccessfulLogin = isSuccessful;
+				}
+			);
+
+			const isSuccessful = this.authService.login(this.loginForm.value);
 		}
 	}
 

@@ -43,5 +43,29 @@
 		input {
 			margin-bottom: 2rem;
 		}
+
+		button {
+			background-color: #6CD982;
+			border: none;
+			font-weight: 700;
+			padding: 0.5rem 1rem;
+			border-radius: 2rem;
+		}
+	}
+
+	&__text {
+		margin-top: 2rem;
+		border: 1px solid #FFFFFF;
+		padding: 1rem 2rem;
+
+		&--success {
+			color: #32c215;
+			border: 1px solid #32c215;
+		}
+
+		&--failed {
+			color: #e61b1b;
+			border: 1px solid #e61b1b;
+		}
 	}
 }

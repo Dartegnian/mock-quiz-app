@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginModalService } from '@services/login-modal.service';
 
 @Component({
 	selector: 'app-hero-banner',
@@ -11,4 +12,12 @@ export class HeroBannerComponent {
 	taglineText = "See Your Students' Potential,";
 	highlightedText = "Through Exams.";
 	ctaText = "Embark on a transformative learning experience with our user-friendly exam platform. Unlock your students' potential and pave the way for academic success.";
+
+	constructor(
+		private loginModalService: LoginModalService
+	) {}
+
+	showModal() {
+		this.loginModalService.setLoginModalShow(true);
+	}
 }
