@@ -23,7 +23,6 @@ export class QuizPageComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.quizQuestions = this.quizQuestionsService.fetchQuizQuestions();
-		console.warn(this.quizQuestions);
 	}
 	
 	updatePoints(pointsInfo: { isCorrect: boolean; index: number }): void {
@@ -35,8 +34,6 @@ export class QuizPageComponent implements OnInit {
 		}
 
 		this.answeredQuestions[index] = true;
-		console.warn(this.answeredQuestions.length, this.quizQuestions.length);
-
 		this.tallyScore();
 	}
 
@@ -53,5 +50,9 @@ export class QuizPageComponent implements OnInit {
 		);
 
 		this.totalScore = computedScore;
+	}
+
+	submitScores(): void {
+		this.quizQuestionsService.setCurrentResults(this.quizQuestions);
 	}
 }
