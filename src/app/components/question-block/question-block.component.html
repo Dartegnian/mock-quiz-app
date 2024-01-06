@@ -1,12 +1,19 @@
 <div class="question-block">
-	<header>
-		{{ question.question }}
+	<header class="question-block__question">
+	  Q: {{ question.question }}
 	</header>
 	<section class="question-block__answers">
-		<ng-container
-			*ngFor="let choice of shuffledChoices"
-		>
-			<span (click)="evaluateChoiceSelect(choice)">{{ choice }}</span>
-		</ng-container>
+	  <ng-container *ngFor="let choice of shuffledChoices; let i = index">
+		<label>
+		  <input
+			type="radio"
+			[attr.name]="'answer_' + index"
+			[value]="i"
+			(change)="evaluateChoiceSelect(choice)"
+		  />
+		  {{ choice }}
+		</label>
+	  </ng-container>
 	</section>
-</div>
+  </div>
+  

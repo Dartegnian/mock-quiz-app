@@ -4,9 +4,15 @@
 	box-shadow: 4px 4px 0 0px #BBBBBB;
 	padding: 1rem;
 
+	&__question {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
 	&__answers {
 		display: flex;
 		gap: 2rem;
 		cursor: pointer;
+		text-transform: capitalize;
 	}
 }
