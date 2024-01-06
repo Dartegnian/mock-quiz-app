@@ -1,0 +1,33 @@
+<article>
+
+	
+	<section>
+		<ng-container [ngTemplateOutlet]="b2First"></ng-container>
+	</section>
+</article>
+
+<ng-template #b2First>
+	<article class="standalone-recommendation">
+		<img [src]="recommendations['b2First'].image" class="standalone-recommendation__image"/>
+		<section>
+			<h3>{{  recommendations['b2First'].inclusionHeader }}</h3>
+			<ul>
+				<li
+					*ngFor="let inclusion of recommendations['b2First'].inclusions"
+					class="standalone-recommendation__benefit"
+				>
+					<span></span>{{ inclusion }}
+				</li>
+			</ul>
+			<h3>{{  recommendations['b2First'].benefitsHeader }}</h3>
+			<ul>
+				<li
+					*ngFor="let benefit of recommendations['b2First'].benefits"
+					class="standalone-recommendation__benefit"
+				>
+					<span></span>{{ benefit }}
+				</li>
+			</ul>
+		</section>
+	</article>
+</ng-template>
