@@ -1,0 +1,15 @@
+:host {
+	position: relative;
+}
+
+.login-modal-overlay {
+	display: block;
+	position: fixed;
+	background-color: #000000;
+	opacity: 40%;
+	height: 100vh;
+	width: 100vw;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}

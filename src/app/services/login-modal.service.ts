@@ -15,6 +15,5 @@ export class LoginModalService {
 	setLoginModalShow(show: boolean): void {
 		this.isLoginModalShown = show;
 		this.showModalSubscription.next(show);
-		console.warn(show);
 	}
 }

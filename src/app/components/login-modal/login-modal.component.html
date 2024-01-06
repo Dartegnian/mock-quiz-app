@@ -1,9 +1,15 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <label for="email">Username:</label>
-  <input type="text" id="email" formControlName="email" />
+<article class="login-modal">
+	<header class="login-modal__header">
+		<h2>Log In</h2>
+		<button class="login-modal__close" (click)="closeModal()">X</button>
+	</header>
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-modal__form">
+		<label for="email">Username</label>
+		<input type="text" id="email" formControlName="email" />
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" formControlName="password" />
+		<label for="password">Password</label>
+		<input type="password" id="password" formControlName="password" />
 
-  <button type="submit" [disabled]="loginForm.invalid">Login</button>
-</form>
+		<button type="submit" [disabled]="loginForm.invalid">Login</button>
+	</form>
+</article>

@@ -1,3 +1,10 @@
+<div
+	class="login-modal-overlay"
+	*ngIf="isLoginModalShown"
+></div>
 <app-nav-bar></app-nav-bar>
-<app-login-modal *ngIf="isLoginModalShown"></app-login-modal>
+<app-login-modal
+  *ngIf="isLoginModalShown"
+  class="login-modal"
+></app-login-modal>
 <router-outlet></router-outlet>

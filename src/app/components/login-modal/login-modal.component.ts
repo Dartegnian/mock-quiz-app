@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '@services/auth.service';
+import { LoginModalService } from '@services/login-modal.service';
 
 @Component({
 	selector: 'app-login-modal',
@@ -14,7 +15,8 @@ export class LoginModalComponent {
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private authService: AuthService
+		private authService: AuthService,
+		private loginModalService: LoginModalService
 	) {
 		this.loginForm = this.formBuilder.group({
 			email: ['', Validators.required],
@@ -26,5 +28,9 @@ export class LoginModalComponent {
 		if (this.loginForm.valid) {
 			this.authService.login(this.loginForm.value);
 		}
+	}
+
+	closeModal() {
+		this.loginModalService.setLoginModalShow(false);
 	}
 }

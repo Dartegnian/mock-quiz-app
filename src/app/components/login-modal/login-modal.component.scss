@@ -1,0 +1,47 @@
+:host {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	z-index: 3;
+}
+
+.login-modal {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #FFFFFF;
+	padding: 1rem 3rem;
+	border: 3px solid #BBBBBB;
+	box-shadow: 4px 4px 0 0px #BBBBBB;
+	padding: 6rem 5rem;
+	width: 100%;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+	}
+
+	&__close {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		color: #FFFFFF;
+		background-color: #e71b1b;
+		padding: 0.5rem 1rem;
+		border-radius: 8px;
+		max-height: 2rem;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+
+		input {
+			margin-bottom: 2rem;
+		}
+	}
+}
