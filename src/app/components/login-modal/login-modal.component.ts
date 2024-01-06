@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SITE_CONFIG } from '@utils/config';
 
 @Component({
 	selector: 'app-login-modal',
@@ -27,7 +28,7 @@ export class LoginModalComponent {
 	onSubmit() {
 		if (this.loginForm.valid) {
 			const loginData = this.loginForm.value;
-			const apiUrl = 'https://quiz-api.dartegnian.com/auth/login';
+			const apiUrl = `${SITE_CONFIG.API_URL}/auth/login`;
 
 			this.http.post(apiUrl, loginData).subscribe({
 				next: (response) => {

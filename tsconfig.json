@@ -37,6 +37,9 @@
       "@interfaces/*": [
         "src/app/interfaces/*"
       ],
+      "@utils/*": [
+        "src/app/utils/*"
+      ],
 	}
   },
   "angularCompilerOptions": {
