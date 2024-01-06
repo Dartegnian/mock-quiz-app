@@ -4,7 +4,7 @@
 	align-items: center;
 	margin: 2rem 5rem;
 	margin-top: 4rem;
-	// flex-direction: column;
+	flex-direction: column;
 	justify-content: space-around;
 }
 
@@ -38,6 +38,7 @@
 		font-size: 3rem;
 		font-weight: 900;
 		text-transform: uppercase;
+		margin: 1rem 0rem;
 
 		&--low {
 			color: rgb(243, 32, 32);
@@ -50,5 +51,15 @@
 		&--high {
 			color: rgb(16, 119, 236);
 		}
+	}
+
+	&__greeting {
+		font-size: 1.5rem;
+		max-width: 900px;
+		margin-bottom: 2rem;
+		padding: 2rem;
+		background-color: #FFFFFF;
+		border: 3px solid #BBBBBB;
+		box-shadow: 4px 4px 0 0px #BBBBBB;
 	}
 }

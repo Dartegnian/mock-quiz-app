@@ -13,6 +13,11 @@ export class ResultsPageComponent implements OnInit {
 	totalScore = 0;
 	percentage = 0;
 	ranking: "low" | "average" | "high" = "low";
+	resultsGreeting = {
+		"low": "Don't be discouraged—every challenge is a learning opportunity. This result highlights areas to focus on, and we're here to guide you. Let's create a personalized study plan that works for you!",
+		"average": "You're halfway to the summit! Keep up the great work, and don't hesitate to reach out for support if you need it. We're here to provide the tools and guidance to help you excel.",
+		"high": "Incredible! You've demonstrated a mastery of the material. We're so proud of your dedication and success. Keep aiming high, and don't forget to celebrate this victory!",
+	}
 
 	constructor(
 		private quizQuestionsService: QuizQuestionsService

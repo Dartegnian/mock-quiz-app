@@ -13,6 +13,10 @@
 		>
 			{{ ranking }}
 		</div>
+		<div class="results-screen__greeting">{{ resultsGreeting[ranking] }}</div>
 	</section>
 </article>
-<app-course-recommendation></app-course-recommendation>
+<article class="course-recommendations">
+	<h2 class="course-recommendations__header">Here Are Products for Your Cambridge English Level</h2>
+	<div><app-course-recommendation></app-course-recommendation></div>
+</article>
