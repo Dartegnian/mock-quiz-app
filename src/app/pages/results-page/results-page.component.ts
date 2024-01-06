@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseRecommendationComponent } from '@components/course-recommendation/course-recommendation.component';
 import { QuizQuestionsService } from '@services/quiz-questions.service';
 
 @Component({
 	selector: 'app-results-page',
 	standalone: true,
-	imports: [],
+	imports: [CourseRecommendationComponent],
 	templateUrl: './results-page.component.html',
 	styleUrl: './results-page.component.scss',
 })
