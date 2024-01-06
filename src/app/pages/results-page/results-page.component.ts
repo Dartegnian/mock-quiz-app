@@ -12,6 +12,7 @@ import { QuizQuestionsService } from '@services/quiz-questions.service';
 export class ResultsPageComponent implements OnInit {
 	totalScore = 0;
 	percentage = 0;
+	questionsLength = 0;
 	ranking: "low" | "average" | "high" = "low";
 	resultsGreeting = {
 		"low": "Don't be discouraged—every challenge is a learning opportunity. This result highlights areas to focus on, and we're here to guide you. Let's create a personalized study plan that works for you!",
@@ -21,7 +22,9 @@ export class ResultsPageComponent implements OnInit {
 
 	constructor(
 		private quizQuestionsService: QuizQuestionsService
-	) {}
+	) {
+		this.questionsLength = this.quizQuestionsService.quizQuestions.length;
+	}
 
 	ngOnInit(): void {
 		this.totalScore = this.quizQuestionsService.getTotalScore();
@@ -29,7 +32,7 @@ export class ResultsPageComponent implements OnInit {
 	}
 
 	computeFromScore(): void {
-		const percentage = (this.totalScore / 10) * 100;
+		const percentage = (this.totalScore / this.questionsLength) * 100;
 		this.percentage = percentage;
 
 		if  (percentage >= 90) {
