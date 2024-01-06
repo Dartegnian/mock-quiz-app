@@ -1,35 +1,37 @@
 <article class="course-recommendation">
   <section class="course-recomendation__product">
-    <ng-container [ngTemplateOutlet]="b2First"></ng-container>
+    <ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'b2First' }"></ng-container>
+    <ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'c1Advanced' }"></ng-container>
+
   </section>
 </article>
 
-<ng-template #b2First>
+<ng-template #standaloneRecommendation let-product="product">
   <article class="standalone-recommendation">
     <header
       class="standalone-recommendation__header standalone-recommendation__header--b-series"
     >
-      {{ recommendations["b2First"].productName }}
+		{{ recommendations[product].productName }}
     </header>
     <a
       href="https://testandtrain.com/"
       target="_blank"
       class="standalone-recommendation__cta standalone-recommendation__cta--b-series"
     >
-      Buy now for {{ recommendations["b2First"].productPrice }}
+      Buy now for {{ recommendations[product].productPrice }}
     </a>
     <section class="standalone-recommendation__content">
       <img
-        [src]="recommendations['b2First'].image"
+        [src]="recommendations[product].image"
         class="standalone-recommendation__image"
       />
       <section>
         <h3 class="standalone-recommendation__product-heading">
-          {{ recommendations["b2First"].inclusionHeader }}
+			Test&Train Self-Study {{ recommendations[product].productName }} gives you
         </h3>
         <ul class="standalone-recommendation__list">
           <li
-            *ngFor="let inclusion of recommendations['b2First'].inclusions"
+            *ngFor="let inclusion of recommendations[product].inclusions"
             class="standalone-recommendation__list-text"
           >
             <span class="standalone-recommendation__list-span">
@@ -42,11 +44,11 @@
           </li>
         </ul>
         <h3 class="standalone-recommendation__product-heading">
-          {{ recommendations["b2First"].benefitsHeader }}
+			Prepare for your exam day with Cambridge quality you can trust
         </h3>
         <ul class="standalone-recommendation__list">
           <li
-            *ngFor="let benefit of recommendations['b2First'].benefits"
+            *ngFor="let benefit of recommendations[product].benefits"
             class="standalone-recommendation__list-text"
           >
             <span class="standalone-recommendation__list-span">
