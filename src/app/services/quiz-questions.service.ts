@@ -6,9 +6,11 @@ import IQuizQuestion from '@interfaces/quiz-question.interface';
 })
 export class QuizQuestionsService {
 	quizQuestions: Array<IQuizQuestion>;
+	currentResults: Array<IQuizQuestion>;
 
 	constructor() {
 		this.quizQuestions = this.fetchQuizQuestions();
+		this.currentResults = [];
 	}
 
 	fetchQuizQuestions(): Array<IQuizQuestion> {
@@ -59,5 +61,9 @@ export class QuizQuestionsService {
 
 		return questions;
 		
+	}
+
+	setCurrentResults(results: Array<IQuizQuestion>): void {
+		this.currentResults = results;
 	}
 }
