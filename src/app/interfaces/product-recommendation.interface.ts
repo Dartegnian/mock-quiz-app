@@ -8,4 +8,5 @@ export interface IProduct {
 	image: string;
 	inclusions: string[];
 	benefits: string[];
+	series: string;
 }

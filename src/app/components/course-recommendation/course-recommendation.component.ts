@@ -18,6 +18,7 @@ export class CourseRecommendationComponent implements OnInit {
 			b2First: {
 				productName: "B2 First",
 				productPrice: "€23",
+				series: 'b',
 				image: "/assets/img/courses/B2_First_-_MockUp.webp",
 				inclusions: [
 					"6 x full Reading & Use of English exams",
@@ -35,6 +36,7 @@ export class CourseRecommendationComponent implements OnInit {
 			c1Advanced: {
 				productName: "C1 Advanced",
 				productPrice: "€23",
+				series: 'c',
 				image: "/assets/img/courses/C1_-_Tablet_and_Mobile.webp",
 				inclusions: [
 					"6 x full Reading & Use of English exams",
@@ -52,6 +54,7 @@ export class CourseRecommendationComponent implements OnInit {
 			b2FirstForSchools: {
 				productName: "B2 First for Schools",
 				productPrice: "€23",
+				series: 'b',
 				image: "/assets/img/courses/B2_first_for_schools_-_MockUp.webp",
 				inclusions: [
 					"6 x full Reading & Use of English exams",
@@ -69,6 +72,7 @@ export class CourseRecommendationComponent implements OnInit {
 			b1PreliminaryForSchools: {
 				productName: "B1 Preliminary for Schools",
 				productPrice: "€23",
+				series: 'b',
 				image: "/assets/img/courses/B1_Preliminary_for_schools_-_MockUp.webp",
 				inclusions: [
 					"6 x full Reading exams",
@@ -86,6 +90,7 @@ export class CourseRecommendationComponent implements OnInit {
 			a2KeyForSchools: {
 				productName: "A2 Key for Schools",
 				productPrice: "€23",
+				series: 'a',
 				image: "/assets/img/courses/A2_Key_for_schools_-_MockUp.webp",
 				inclusions: [
 					"6 x full Reading & Writing exams with sample answers and examiner notes",

@@ -17,14 +17,14 @@
 <ng-template #standaloneRecommendation let-product="product">
   <article class="standalone-recommendation">
     <header
-      class="standalone-recommendation__header standalone-recommendation__header--b-series"
+      [class]="'standalone-recommendation__header standalone-recommendation__header--' + recommendations[product].series + '-series'"
     >
 		{{ recommendations[product].productName }}
     </header>
     <a
       href="https://testandtrain.com/"
       target="_blank"
-      class="standalone-recommendation__cta standalone-recommendation__cta--b-series"
+      [class]="'standalone-recommendation__cta standalone-recommendation__cta--' + recommendations[product].series + '-series'"
     >
       Buy now for {{ recommendations[product].productPrice }}
     </a>

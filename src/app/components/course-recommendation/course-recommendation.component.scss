@@ -1,7 +1,10 @@
-.course-reccomendation {
+.course-recomendation {
 	&__product {
 		display: flex;
-		width: 700px;
+		width: 1200px;
+		gap: 4rem;
+		flex-direction: column;
+		align-items: center;
 	}
 }
 
@@ -27,8 +30,16 @@
 		font-weight: 700;
 		text-align: center;
 
+		&--c-series {
+			color: #802c76;
+		}
+
 		&--b-series {
 			color: #182062;
+		}
+		
+		&--a-series {
+			color: #6ec3d5;
 		}
 	}
 
@@ -41,10 +52,22 @@
 		text-decoration: none;
 		align-self: center;
 		margin: 1rem 0rem;
+		font-weight: 600;
+
+		&--c-series {
+			color: #eeeeee;
+			background-color: #802c76;
+		}
 
 		&--b-series {
 			color: #182062;
 			background-color: #ccd544;
+		}
+		
+		&--a-series {
+			color: #182062;
+			color: #ffffff;
+			background-color: #6ec3d5;
 		}
 	}
 

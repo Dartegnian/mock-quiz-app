@@ -12,6 +12,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-bottom: 2rem;
 
 	&__header {
 		display: flex;
@@ -61,5 +62,26 @@
 		background-color: #FFFFFF;
 		border: 3px solid #BBBBBB;
 		box-shadow: 4px 4px 0 0px #BBBBBB;
+	}
+}
+
+.course-recommendations {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__header {
+		display: inline-block;
+		max-width: max-content;
+		background-color: #6CD982;
+		padding: 1rem 1.5rem;
+		text-align: center;
+		margin-bottom: 2rem;
+		font-weight: 700;
+	}
+	&__component {
+		border-radius: 2rem;
+		background-color: #FFFFFF;
+		padding: 2rem;
 	}
 }
