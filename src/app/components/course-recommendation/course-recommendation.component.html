@@ -1,8 +1,16 @@
 <article class="course-recommendation">
   <section class="course-recomendation__product">
-    <ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'b2First' }"></ng-container>
-    <ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'c1Advanced' }"></ng-container>
-
+    <ng-container *ngIf="ranking == 'low'">
+		<ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'b2First' }"></ng-container>
+    	<ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'c1Advanced' }"></ng-container>
+	</ng-container>
+    <ng-container *ngIf="ranking == 'average'">
+		<ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'b2FirstForSchools' }"></ng-container>
+	</ng-container>
+    <ng-container *ngIf="ranking == 'high'">
+		<ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'b1PreliminaryForSchools' }"></ng-container>
+		<ng-container *ngTemplateOutlet="standaloneRecommendation; context: { product: 'a2KeyForSchools' }"></ng-container>
+	</ng-container>
   </section>
 </article>
 
