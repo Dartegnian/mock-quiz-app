@@ -8,3 +8,7 @@
 		</ng-container>
 	</article>
 </div>
+<button
+	class="quiz-submit-button"
+	[disabled]="answeredQuestions.length !== quizQuestions.length"
+>Submit Answers</button>

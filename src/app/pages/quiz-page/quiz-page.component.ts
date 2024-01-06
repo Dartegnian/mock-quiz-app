@@ -13,6 +13,7 @@ import { QuizQuestionsService } from '@services/quiz-questions.service';
 })
 export class QuizPageComponent implements OnInit {
 	quizQuestions: Array<IQuizQuestion> = [];
+	answeredQuestions: Array<boolean> = [];
 	totalScore = 0;
 
 	constructor(
@@ -32,6 +33,9 @@ export class QuizPageComponent implements OnInit {
 		} else {
 			this.quizQuestions[index].isCorrect = false;
 		}
+
+		this.answeredQuestions[index] = true;
+		console.warn(this.answeredQuestions.length, this.quizQuestions.length);
 
 		this.tallyScore();
 	}
