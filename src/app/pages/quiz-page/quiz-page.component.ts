@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuestionBlockComponent } from '@components/question-block/question-block.component';
 import IQuizQuestion from '@interfaces/quiz-question.interface';
 import { QuizQuestionsService } from '@services/quiz-questions.service';
@@ -17,6 +18,7 @@ export class QuizPageComponent implements OnInit {
 	totalScore = 0;
 
 	constructor(
+		private router: Router,
 		private quizQuestionsService: QuizQuestionsService
 	) {
 	}
@@ -55,5 +57,6 @@ export class QuizPageComponent implements OnInit {
 
 	submitScores(): void {
 		this.quizQuestionsService.setCurrentResults(this.quizQuestions);
+		this.router.navigate(['/results']);
 	}
 }

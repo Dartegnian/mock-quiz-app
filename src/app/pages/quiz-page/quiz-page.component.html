@@ -11,4 +11,5 @@
 <button
 	class="quiz-submit-button"
 	[disabled]="answeredQuestions.length !== quizQuestions.length"
+	(click)="submitScores()"
 >Submit Answers</button>
