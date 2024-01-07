@@ -1,9 +1,23 @@
+@import "global";
+
 :host {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 2rem 5rem;
 	margin-top: 4rem;
+
+	@include media-breakpoint-down(xl) {
+		margin: 2rem 4rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin: 1.5rem 2.5rem;
+	}
+
+	@include media-breakpoint-down(md) {
+		margin: 1.25rem 2.25rem;
+	}
 }
 
 .hero-banner {
@@ -17,6 +31,14 @@
 		gap: 4rem;
 		justify-content: space-between;
 		margin-bottom: 2rem;
+
+		@include media-breakpoint-down(xl) {
+			gap: 2rem;
+		}
+
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+		}
 	}
 
 	&__tagline {
@@ -26,6 +48,14 @@
 
 	&__tagline-text {
 		font-size: 3rem;
+
+		@include media-breakpoint-down(xl) {
+			font-size: 2.25rem;
+		}
+
+		@include media-breakpoint-down(md) {
+			font-size: 1.5rem;
+		}
 
 		&--highlighted {
 			font-weight: 900;
@@ -45,6 +75,27 @@
 
 	&__illustration {
 		max-width: 25%;
+
+		@include media-breakpoint-down(xl) {
+			max-width: 45%;
+		}
+
+		@include media-breakpoint-down(lg) {
+			max-width: 100%;
+		}
+
+		@include media-breakpoint-down(xl) {
+			&:nth-of-type(2) {
+				display: none;
+			}
+		}
+
+		@include media-breakpoint-down(lg) {
+			&:nth-of-type(2),
+			&:nth-of-type(3) {
+				display: none;
+			}
+		}
 	}
 
 	&__cta {
@@ -52,6 +103,18 @@
 		flex-direction: column;
 		max-width: 45%;
 		font-size: 1.25rem;
+
+		@include media-breakpoint-down(xl) {
+			font-size: 1rem;
+		}
+
+		@include media-breakpoint-down(lg) {
+			max-width: 100%;
+		}
+
+		@include media-breakpoint-down(md) {
+			font-size: 0.95rem;
+		}
 	}
 
 	&__cta-button {
