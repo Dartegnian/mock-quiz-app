@@ -1,3 +1,3 @@
 export const SITE_CONFIG = {
-	API_URL: "http://localhost:8080"
+	API_URL: "https://quiz-api.dartegnian.com"
 }
