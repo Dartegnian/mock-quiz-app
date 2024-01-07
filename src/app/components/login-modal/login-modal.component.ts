@@ -16,6 +16,7 @@ import { QuizQuestionsService } from '@services/quiz-questions.service';
 export class LoginModalComponent {
 	loginForm: FormGroup;
 	isSuccessfulLogin: boolean | undefined;
+	isLoggingIn = false;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -25,13 +26,14 @@ export class LoginModalComponent {
 		private quizQuestionsService: QuizQuestionsService
 	) {
 		this.loginForm = this.formBuilder.group({
-			email: ['', Validators.required],
+			email: ['', [Validators.required, Validators.email]],
 			password: ['', Validators.required]
 		});
 	}
 
 	onSubmit() {
 		if (this.loginForm.valid) {
+			this.isLoggingIn = true;
 			this.authService.login(this.loginForm.value).subscribe(
 				(isSuccessfulLogin) => {
 					this.isSuccessfulLogin = isSuccessfulLogin;
@@ -42,12 +44,18 @@ export class LoginModalComponent {
 								if (isSuccessfulQuestionsFetch) {
 									this.loginModalService.setLoginModalShow(false);
 									this.router.navigate(['/quiz']);
+								} else {
+									this.isLoggingIn = false;
 								}
 							}
 						);
+					} else {
+						this.isLoggingIn = false;
 					}
 				}
 			);
+		} else {
+			this.isLoggingIn = false;
 		}
 	}
 
