@@ -4,7 +4,12 @@
 		<li *ngFor="let link of links" class="navbar__list-item"><a [href]="link.link" class="navbar__link">{{ link.title }}</a></li>
 	</ul>
 	<button
+		*ngIf="!username"
 		class="navbar__login"
 		(click)="showModal()"
 	>Log In</button>
+	<span
+		*ngIf="username"
+		class="navbar__username"
+	>Hi, {{ username }}!</span>
 </nav>
