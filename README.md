@@ -1,6 +1,31 @@
-# MockQuizApp
+# Mock Quiz App Front-end (Angular), MEAN Stack
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+
+## Build system
+
+![Diragram of the bild system](img/buildsystem.png?raw=true "Build system")
+
+This application uses the following tools:
+
+- **GitHub** for source code management
+- **Vercel** for builds and deployments
+- **Cloudflare** for DNS routing
+
+Changes are pushed and built in Vercel on every commit, on every branch.
+
+## Tech stack architecture (MEAN)
+
+![Diragram of the bild system](img/stackarchi.png?raw=true "Stack architecture")
+
+This application uses the following tools:
+
+- **MongoDB** for data storage and retrieval
+- **ExpressJS** for backend API calls
+- **Angular** for serving the front-end
+- **NodeJS** for hosting the backend
+
+Changes are pushed and built in Vercel on every commit, on every branch.
 
 ## Development server
 
