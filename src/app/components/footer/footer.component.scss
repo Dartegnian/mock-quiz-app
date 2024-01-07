@@ -1,0 +1,39 @@
+.site-footer {
+	margin-top: 2rem;
+	background-color: #6CD982;
+	background-image: linear-gradient(90deg, #6CD982 0%, #8fd3f4 100%);
+	width: 100%;
+	display: flex;
+	// position: absolute;
+	// bottom: 0;
+	padding: 2rem 4rem;
+	font-weight: 900;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&__header {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	&__message {
+		color: #fff;
+	}
+
+	&__links {
+		display: flex;
+		gap: 2rem
+	}
+
+	&__link {
+		color: #fff;
+		text-decoration: none;
+		margin: 0px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

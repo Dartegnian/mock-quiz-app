@@ -5,11 +5,12 @@ import { NavBarComponent } from '@components/nav-bar/nav-bar.component';
 import { LoginModalService } from '@services/login-modal.service';
 import { LoginModalComponent } from '@components/login-modal/login-modal.component';
 import { Subscription } from 'rxjs';
+import { FooterComponent } from '@components/footer/footer.component';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [CommonModule, RouterOutlet, NavBarComponent, LoginModalComponent],
+	imports: [CommonModule, RouterOutlet, NavBarComponent, LoginModalComponent, FooterComponent],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss'
 })
