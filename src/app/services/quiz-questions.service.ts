@@ -1,5 +1,9 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import IQuizQuestion from '@interfaces/quiz-question.interface';
+import { SITE_CONFIG } from '@utils/config';
+import { AuthService } from './auth.service';
+import { map, catchError, of, Observable } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
@@ -9,44 +13,45 @@ export class QuizQuestionsService {
 	currentResults: Array<IQuizQuestion>;
 	totalScore = 0;
 
-	constructor() {
-		this.quizQuestions = this.fetchQuizQuestions();
+	constructor(
+		private http: HttpClient,
+		private authService: AuthService
+	) {
+		this.quizQuestions = [];
 		this.currentResults = [];
 	}
 
-	fetchQuizQuestions(): Array<IQuizQuestion> {
-		let quizQuestions: Array<IQuizQuestion> = [
-			{
-				type: "multiple-choice",
-				question: "Can you hear what he is .......?",
-				answer: "saying",
-				pointGrade: 1,
-				choices: [
-					"saying",
-					"speaking",
-					"telling",
-					"talking"
-				],
-				isCorrect: false
-			},
-			{
-				type: "multiple-choice",
-				question: "She hasn't come home ........",
-				answer: "yet",
-				pointGrade: 1,
-				choices: [
-					"still",
-					"already",
-					"yet",
-					"till"
-				],
-				isCorrect: false
-			}
-		];
+	fetchQuizQuestions(): Observable<boolean> {
+		const sessionToken = this.authService.getSessionToken();
 
-		quizQuestions = this.shuffleQuizQuestions(quizQuestions);
+		if (sessionToken) {
+			const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionToken}`);
+			// const headers = new HttpHeaders({
+			// 	'Content-Type': 'application/json',
+			// 	'QUIZ-AUTH': sessionToken
+			// });
 
-		return quizQuestions;
+			// const options = {
+			// 	headers,
+			// 	withCredentials: true
+			// };
+
+			return this.http.get<Array<IQuizQuestion>>(`${SITE_CONFIG.API_URL}/questions`, { headers })
+				.pipe(
+					map((quizQuestions) => {
+						console.log("Questions fetched!", quizQuestions);
+						this.quizQuestions = this.shuffleQuizQuestions(quizQuestions);
+						return true;
+					}),
+					catchError((error) => {
+						console.error(error);
+						return of(false);
+					})
+				);
+		} else {
+			console.error("User is not authenticated");
+			return of(false);
+		}
 	}
 
 	shuffleQuizQuestions(questions: Array<IQuizQuestion>): Array<IQuizQuestion> {
@@ -61,7 +66,10 @@ export class QuizQuestionsService {
 		}
 
 		return questions;
-		
+	}
+
+	getQuizQuestions(): Array<IQuizQuestion> {
+		return this.quizQuestions;
 	}
 
 	setCurrentResults(results: Array<IQuizQuestion>): void {
