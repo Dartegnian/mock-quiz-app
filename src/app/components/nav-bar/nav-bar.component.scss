@@ -1,8 +1,22 @@
+@import "global";
+
 :host {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 2rem 5rem;
+
+	@include media-breakpoint-down(xl) {
+		margin: 2rem 4rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin: 1.5rem 2.5rem;
+	}
+
+	@include media-breakpoint-down(md) {
+		margin: 1.25rem 2.25rem;
+	}
 }
 
 .navbar {
@@ -15,6 +29,14 @@
 	flex-grow: 1;
 	align-items: center;
 	justify-content: space-between;
+
+	@include media-breakpoint-down(lg) {
+		padding: 1rem 2.5rem;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 0.75rem 2rem;
+	}
 
 	&__site-name {
 		font-size: 1rem;
