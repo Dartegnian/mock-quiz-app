@@ -26,8 +26,8 @@ export class LoginModalComponent {
 		private quizQuestionsService: QuizQuestionsService
 	) {
 		this.loginForm = this.formBuilder.group({
-			email: ['', [Validators.required, Validators.email]],
-			password: ['', Validators.required]
+			email: ['test@dartegnian.com', [Validators.required, Validators.email]],
+			password: ['BingoBongo1!', Validators.required]
 		});
 	}
 
