@@ -22,8 +22,6 @@ export class AuthService {
 		return this.http.post<LoginResponse>(`${SITE_CONFIG.API_URL}/auth/login`, loginData)
 			.pipe(
 				map((response) => {
-					console.log('Login successful!', response);
-
 					this.user.username = response.username;
 					this.user.email = response.email;
 					this.token = response.authentication.sessionToken;

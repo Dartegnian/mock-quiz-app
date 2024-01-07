@@ -39,7 +39,6 @@ export class QuizQuestionsService {
 			return this.http.get<Array<IQuizQuestion>>(`${SITE_CONFIG.API_URL}/questions`, { headers })
 				.pipe(
 					map((quizQuestions) => {
-						console.log("Questions fetched!", quizQuestions);
 						this.quizQuestions = this.shuffleQuizQuestions(quizQuestions);
 						return true;
 					}),

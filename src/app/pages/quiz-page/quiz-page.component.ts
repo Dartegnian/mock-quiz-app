@@ -46,7 +46,6 @@ export class QuizPageComponent implements OnInit {
 			(question) => {
 				if (question.isCorrect === true) {
 					computedScore += question.pointGrade;
-					console.warn("CORRECT", question);
 				}
 			}
 		);
