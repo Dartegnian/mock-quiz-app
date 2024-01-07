@@ -5,7 +5,7 @@ import { Subject, Subscription } from 'rxjs';
 	providedIn: 'root'
 })
 export class LoginModalService {
-	isLoginModalShown = true;
+	isLoginModalShown = false;
 	showModalSubscription: Subject<boolean>;
 
 	constructor() {

@@ -36,4 +36,8 @@ export class AuthService {
 				})
 			);
 	}
+
+	getSessionToken(): string {
+		return this.token;
+	}
 }

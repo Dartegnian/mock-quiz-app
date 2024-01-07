@@ -24,7 +24,7 @@ export class QuizPageComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.quizQuestions = this.quizQuestionsService.fetchQuizQuestions();
+		this.quizQuestions = this.quizQuestionsService.getQuizQuestions();
 	}
 	
 	updatePoints(pointsInfo: { isCorrect: boolean; index: number }): void {
